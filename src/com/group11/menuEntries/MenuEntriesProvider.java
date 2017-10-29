@@ -40,9 +40,15 @@ public class MenuEntriesProvider {
         return entry;
     }
 
-    public static SubMenuEntry convertToRawVideo() {
+    public static SubMenuEntry convertToRawVideoEntry() {
         BaseMenuPage subPage = MenuPageProvider.getConvertToVideoRawSubPage();
         SubMenuEntry entry = new SubMenuEntry("Convert digital video to raw format", subPage);
+        return entry;
+    }
+
+    public static SubMenuEntry generateRandomRawVideoEntry() {
+        BaseMenuPage subPage = MenuPageProvider.getGenerateRandomRawVideoSubPage();
+        SubMenuEntry entry = new SubMenuEntry("Generate random video in raw format", subPage);
         return entry;
     }
 }

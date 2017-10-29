@@ -34,6 +34,7 @@ public class MessageMenuPage extends BaseMenuPage {
             ConsoleHandler.shared().printMessage("Working...");
             for (BaseMenuEntry entry : entries) {
                 entry.action(input);
+                entry.action();
             }
         }
     }
