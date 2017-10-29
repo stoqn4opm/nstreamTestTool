@@ -1,7 +1,7 @@
 package com.group11;
 
 import com.group11.MenuPages.BaseMenuPage;
-import java.util.Scanner;
+import java.io.Console;
 
 public class ConsoleHandler {
 
@@ -58,8 +58,13 @@ public class ConsoleHandler {
     }
 
     public void processUserInput() {
-        Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
-        presentedMenu.handleUserInput(input);
+
+        Console console = System.console();
+        if (console == null) {
+            System.err.println("Run this tool inside interactive terminal!");
+            System.exit(-1);
+        }
+
+        presentedMenu.handleUserInput(console.readLine());
     }
 }

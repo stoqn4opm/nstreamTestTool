@@ -1,18 +1,14 @@
 package com.group11.MenuPages;
 
-import com.group11.MenuEntry;
+import com.group11.menuEntries.BaseMenuEntry;
 
 import java.util.ArrayList;
 
 public class BaseMenuPage {
 
-    public ArrayList<MenuEntry> entries;
+    public ArrayList<BaseMenuEntry> entries;
 
-    BaseMenuPage() {
-        entries = new ArrayList<MenuEntry>();
-    }
-
-    public BaseMenuPage(ArrayList<MenuEntry> entries) {
+    public BaseMenuPage(ArrayList<BaseMenuEntry> entries) {
         this.entries = entries;
     }
 

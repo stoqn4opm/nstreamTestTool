@@ -1,7 +1,7 @@
 package com.group11.MenuPages;
 
 import com.group11.ConsoleHandler;
-import com.group11.MenuEntry;
+import com.group11.menuEntries.BaseMenuEntry;
 
 import java.util.ArrayList;
 
@@ -9,11 +9,7 @@ public class ListMenuPage extends BaseMenuPage {
 
     public String pageTitle = "";
 
-    public ListMenuPage(String pageTitle) {
-        this.pageTitle = pageTitle;
-    }
-
-    public ListMenuPage(ArrayList<MenuEntry> entries, String pageTitle) {
+    public ListMenuPage(ArrayList<BaseMenuEntry> entries, String pageTitle) {
         super(entries);
         this.pageTitle = pageTitle;
     }
@@ -21,13 +17,13 @@ public class ListMenuPage extends BaseMenuPage {
     @Override
     public String textRepresentation() {
 
-        MenuEntry[] entries = this.entries.toArray(new MenuEntry[this.entries.size()]);
+        BaseMenuEntry[] entries = this.entries.toArray(new BaseMenuEntry[this.entries.size()]);
 
         StringBuilder sb = new StringBuilder();
         sb.append(pageTitle).append("\n");
 
         for (int i = 0; i < entries.length; i++) {
-            sb.append(String.format("%d. %s\n", i, entries[i].title));
+            sb.append(String.format("%d. %s\n", i, entries[i].getTitle()));
         }
         sb.append("\nChoose your input: ");
 
@@ -45,7 +41,7 @@ public class ListMenuPage extends BaseMenuPage {
             return;
         }
 
-        MenuEntry[] entries = this.entries.toArray(new MenuEntry[this.entries.size()]);
+        BaseMenuEntry[] entries = this.entries.toArray(new BaseMenuEntry[this.entries.size()]);
 
         if (index != -1 && index < entries.length) {
             entries[index].action();
@@ -55,6 +51,4 @@ public class ListMenuPage extends BaseMenuPage {
         ConsoleHandler.shared().printMessage(String.format("Wrong Input. Type a number from %d to %d", 0, entries.length - 1));
         ConsoleHandler.shared().reloadMenuAfter(2000);
     }
-
-
 }
