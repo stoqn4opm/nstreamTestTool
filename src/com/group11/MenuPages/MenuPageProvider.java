@@ -14,7 +14,7 @@ public class MenuPageProvider {
         ArrayList<BaseMenuEntry> list = new ArrayList<>();
         list.add(MenuEntriesProvider.liveStreamAdv7180Entry());
         list.add(MenuEntriesProvider.liveStreamRawVideoEntry(""));
-        list.add(MenuEntriesProvider.liveStreamRandomVideoEntry());
+        list.add(MenuEntriesProvider.openStreamingPipeToYoutube());
         list.add(MenuEntriesProvider.convertToRawVideoEntry());
         list.add(MenuEntriesProvider.generateRandomRawVideoEntry());
 

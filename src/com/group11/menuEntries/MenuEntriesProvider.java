@@ -2,6 +2,7 @@ package com.group11.menuEntries;
 
 import com.group11.MenuPages.BaseMenuPage;
 import com.group11.MenuPages.MenuPageProvider;
+import com.group11.StreamParametersHelper;
 
 import java.util.ArrayList;
 
@@ -29,14 +30,9 @@ public class MenuEntriesProvider {
         return entry;
     }
 
-    public static ProcessStatusMenuEntry liveStreamRandomVideoEntry() {
-        ArrayList<String> commands = new ArrayList<>();
-        commands.add("ping");
-        commands.add("google.bg");
-        commands.add("-c");
-        commands.add("4");
-
-        ProcessStatusMenuEntry entry = new ProcessStatusMenuEntry("Live stream random video", commands);
+    public static ProcessStatusMenuEntry openStreamingPipeToYoutube() {
+        ArrayList<String> commands = StreamParametersHelper.openStreamingPipeToAddress("rtmp://a.rtmp.youtube.com/live2/4u3d-d39c-cp1c-bruj");
+        ProcessStatusMenuEntry entry = new ProcessStatusMenuEntry("Open streaming pipe \"stream_pipe\" to Youtube", commands);
         return entry;
     }
 
