@@ -30,6 +30,11 @@ public class MessageMenuPage extends BaseMenuPage {
 
         if (input.equals("back")) {
             ConsoleHandler.shared().loadMenu(MenuPageProvider.getMainMenuPage());
+        } else {
+            ConsoleHandler.shared().printMessage("Working...");
+            for (BaseMenuEntry entry : entries) {
+                entry.action(input);
+            }
         }
     }
 }

@@ -2,6 +2,8 @@ package com.group11.MenuPages;
 
 import com.group11.menuEntries.BaseMenuEntry;
 import com.group11.menuEntries.MenuEntriesProvider;
+import com.group11.menuEntries.UserInputMenuEntry;
+
 import java.util.ArrayList;
 
 public class MenuPageProvider {
@@ -26,7 +28,23 @@ public class MenuPageProvider {
     public static BaseMenuPage getConvertToVideoRawSubPage() {
 
         ArrayList<BaseMenuEntry> entries = new ArrayList<>();
-        BaseMenuEntry entry = new BaseMenuEntry("enter path to video that you want to convert or \"back\" to get to previous menu:");
+        ArrayList<String> commands = new ArrayList<>();
+
+        commands.add("/usr/local/Cellar/ffmpeg/3.4/bin/ffmpeg");
+        commands.add("-i");
+        commands.add(UserInputMenuEntry.INPUT_PLACEHOLDER);
+        commands.add("-s");
+        commands.add("256x240");
+        commands.add("-c:v");
+        commands.add("rawvideo");
+        commands.add("-pixel_format");
+        commands.add("yuv422p");
+        commands.add("-an");
+        commands.add("-f");
+        commands.add("rawvideo");
+        commands.add("rawvideo.raw");
+
+        UserInputMenuEntry entry = new UserInputMenuEntry("enter path to video or \"back\" to get to previous menu:", commands);
         entries.add(entry);
         BaseMenuPage convertToRawVideo = new MessageMenuPage(entries, "Convert digital video to raw format");
         return convertToRawVideo;

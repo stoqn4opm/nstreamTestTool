@@ -45,7 +45,7 @@ public class ProcessStatusMenuEntry extends BaseMenuEntry {
 
             Runnable asyncTask = () -> {
                 try {
-                    process = new ProcessBuilder(command).redirectOutput(new File(String.format("%s.log", getTitle()))).start();
+                    process = new ProcessBuilder(command).redirectOutput(new File(String.format("%s.log", getTitle().replaceAll(" ", "_")))).start();
                     updateStatus(true);
                     process.waitFor();
                     updateStatus(false);

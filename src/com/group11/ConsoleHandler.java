@@ -38,6 +38,19 @@ public class ConsoleHandler {
         processUserInput();
     }
 
+    public void loadMenu(BaseMenuPage menu, long after) {
+
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        loadMenu(menu);
+                    }
+                },
+                after
+        );
+    }
+
     public void printMessage(String message) {
         System.out.println(message);
     }

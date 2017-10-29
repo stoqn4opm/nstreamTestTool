@@ -8,9 +8,9 @@ public class BaseMenuEntry {
         this.title = title;
     }
 
-    public void action() {
+    public void action() {}
 
-    }
+    public void action(String input) {}
 
     public String getTitle() {
         return title;
