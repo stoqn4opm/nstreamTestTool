@@ -26,6 +26,10 @@ public class ConsoleHandler {
 
     private BaseMenuPage presentedMenu;
 
+    public BaseMenuPage getPresentedMenu() {
+        return presentedMenu;
+    }
+
     public void loadMenu(BaseMenuPage menu) {
         clearScreen();
         System.out.println(header);

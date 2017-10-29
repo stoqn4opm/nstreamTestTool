@@ -25,7 +25,7 @@ public class ListMenuPage extends BaseMenuPage {
         for (int i = 0; i < entries.length; i++) {
             sb.append(String.format("%d. %s\n", i, entries[i].getTitle()));
         }
-        sb.append("\nChoose your input: ");
+        sb.append("\nChoose your input or \"q\" to quit: ");
 
         return sb.toString();
     }
@@ -33,6 +33,10 @@ public class ListMenuPage extends BaseMenuPage {
     @Override
     public void handleUserInput(String input) {
         int index = -1;
+
+        if (input.equals("q")) {
+            System.exit(0);
+        }
 
         try { index = Integer.parseInt(input); }
         catch (NumberFormatException e) {
