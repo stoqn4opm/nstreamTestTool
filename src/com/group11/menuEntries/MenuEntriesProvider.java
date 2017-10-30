@@ -31,7 +31,7 @@ public class MenuEntriesProvider {
     }
 
     public static ProcessStatusMenuEntry openStreamingPipeToYoutube() {
-        ArrayList<String> commands = StreamParametersHelper.openStreamingPipeToAddress("rtmp://a.rtmp.youtube.com/live2/4u3d-d39c-cp1c-bruj");
+        ArrayList<String> commands = StreamParametersHelper.openStreamingPipeToAddress("rtmp://a.rtmp.youtube.com/live2/z939-kue9-98z8-fu60");
         ProcessStatusMenuEntry entry = new ProcessStatusMenuEntry("Open streaming pipe \"stream_pipe\" to Youtube", commands);
         return entry;
     }
